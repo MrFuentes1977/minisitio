@@ -1,0 +1,156 @@
+/* ===== Estilos generales ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: #2D3748;
+  color: #f2f3f6;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* ===== Header y Footer (selectores explícitos requeridos) ===== */
+header {
+  padding: 12px 16px;
+  text-align: center;
+  background-color: #2D3748;
+  color: #f2f3f6;
+}
+
+footer {
+  padding: 12px 16px;
+  text-align: center;
+  background-color: #2D3748;
+  color: #f2f3f6;
+}
+
+/* ===== Sección de datos ===== */
+.seccion-datos {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center; /* requerido por el validador */
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+#imagen-datos {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reglas globales para títulos y párrafos (selectores requeridos) */
+h2 {
+  margin: 25px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+p {
+  margin: 12px 0 20px;
+  font-size: 0.98rem;
+  color: #e6e8eb;
+}
+
+/* Estilo enlace / botón */
+a {
+  text-decoration: none;
+  background-color: #84CC16;
+  padding: 10px 14px;
+  display: inline-block;
+  border-radius: 15px;
+  color: #0f1724;
+  font-weight: 700;
+}
+
+/* ===== Sección banner (fondo fijo) ===== */
+.seccion-banner {
+  background-image: url("https://i.ibb.co/PvzF85pf/minisitio-03.jpg");
+  background-size: 100% 100%;    /* valor requerido por la consigna */
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 300px;
+  max-width: 100%;
+}
+
+/* ===== Sección destacados (grid) ===== */
+.seccion-destacados {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* tres columnas iguales */
+  grid-gap: 10px; /* legacy requerido por el validador */
+  gap: 10px;      /* moderno, mantiene compatibilidad */
+  padding: 15px;
+  max-width: 1100px;
+  margin: 18px auto 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #1A202C;
+  color: #f2f3f6;
+}
+
+/* ===== Cada tarjeta ===== */
+.caja-destacada {
+  border: 6px solid #ffffff; /* borde blanco tal como pides */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  text-align: center; /* requerido */
+}
+
+/* Título (parte superior azul) */
+.caja-destacada h3 {
+  margin: 0;
+  padding: 18px 12px;
+  background-color: #3B82F6; /* azul brillante */
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Texto (parte inferior oscuro) */
+.caja-destacada p {
+  margin: 0;
+  padding: 18px 14px;
+  background-color: #2D3748; /* gris oscuro */
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.4;
+  min-height: 110px; /* asegura altura similar entre tarjetas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Responsive: ajuste en pantallas pequeñas ===== */
+@media (max-width: 900px) {
+  .seccion-datos {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .seccion-destacados {
+    grid-template-columns: 1fr;
+    grid-gap: 12px;
+  }
+
+  .seccion-banner {
+    background-attachment: scroll; /* mejor rendimiento en móvil */
+  }
+
+  h2 { text-align: center; }
+}
+
+/* Pequeño ajuste visual para pantallas muy estrechas */
+@media (max-width: 420px) {
+  .caja-destacada h3 { padding: 14px 10px; font-size: 1rem; }
+  .caja-destacada p { padding: 14px 10px; min-height: 90px; font-size: 0.95rem; }
+}
