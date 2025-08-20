@@ -1,106 +1,202 @@
-/* Copia y pega tu código CSS de Proyecto Minisitio - Paso 03 */
-/* Estilos generales */
-* {
-    box-sizing: border-box;
-}
+/* ===== Estilos generales ===== */
+* { box-sizing: border-box; }
 
 body {
-    margin: 0;
-    background-color: #2D3748;
-    color: #f2f3f6;
-    font-family: 'Helvetica', sans-serif;
-    font-weight: bold;
+  margin: 0;
+  background-color: #2D3748;
+  color: #f2f3f6;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
-/* Encabezado */
+/* ===== Header y Footer (selectores explícitos requeridos) ===== */
 header {
-    padding: 5px;
-    text-align: center;
-    background-color: #2D3748;
-    color: #f2f3f6;
-    font-family: 'Helvetica', sans-serif;
+  padding: 12px 16px;
+  text-align: center;
+  background-color: #2D3748;
+  color: #f2f3f6;
 }
 
-/* Pie de página */
 footer {
-    padding: 10px;
-    text-align: center;
-    background-color: #2D3748;
-    color: #f2f3f6;
-    font-family: 'Helvetica', sans-serif;
+  padding: 12px 16px;
+  text-align: center;
+  background-color: #2D3748;
+  color: #f2f3f6;
 }
 
-/* Sección de datos */
+/* ===== Sección de datos ===== */
 .seccion-datos {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 10px;
-    align-items: center;
-    justify-items: center;
-    justify-content: center; /* requerido */
-}
-
-h2 {
-    margin: 25px;
-}
-
-p {
-    margin: 25px;
-}
-
-a {
-    text-decoration: none;
-    background-color: #84CC16;
-    padding: 10px;
-    margin: 25px;
-    border-radius: 15px;
-    display: block;
-    text-align: center;
-    color: #f2f3f6;
-    transition: all 0.3s ease;
-}
-
-/* Hover del enlace */
-a:hover {
-    background-color: #65a30d;
-    color: #fff;
-    transform: scale(1.05); /* efecto opcional */
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center; /* requerido por el validador */
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
 }
 
 #imagen-datos {
-    width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Nueva sección con imagen de fondo fija optimizada */
+/* Reglas globales para títulos y párrafos (selectores requeridos) */
+h2 {
+  margin: 25px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+p {
+  margin: 12px 0 20px;
+  font-size: 0.98rem;
+  color: #e6e8eb;
+}
+
+/* Estilo enlace / botón */
+a {
+  text-decoration: none;
+  background-color: #84CC16;
+  padding: 10px 14px;
+  display: inline-block;
+  border-radius: 15px;
+  color: #0f1724;
+  font-weight: 700;
+}
+
+/* ===== Sección banner (fondo fijo) ===== */
 .seccion-banner {
-    background-image: url("https://i.ibb.co/PvzF85pf/minisitio-03.jpg");
-    background-size: 100% 100%; /* Valor requerido */
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    height: 300px;
+  background-image: url("https://i.ibb.co/PvzF85pf/minisitio-03.jpg");
+  background-size: 100% 100%;    /* valor requerido por la consigna */
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 300px;
+  max-width: 100%;
 }
 
-/* Sección destacados */
+/* ===== Sección destacados (grid) ===== */
 .seccion-destacados {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas iguales */
-    grid-gap: 10px; /* legacy para el validador */
-    gap: 10px;      /* moderno, mantiene compatibilidad */
-    padding: 15px;
-    background-color: #1A202C;
-    color: #f2f3f6;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* tres columnas iguales */
+  grid-gap: 10px; /* legacy requerido por el validador */
+  gap: 10px;      /* moderno, mantiene compatibilidad */
+  padding: 15px;
+  max-width: 1100px;
+  margin: 18px auto 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: #1A202C;
+  color: #f2f3f6;
 }
 
+/* ===== Cada tarjeta ===== */
 .caja-destacada {
-    padding: 5px;
-    text-align: center;
-    transition: all 0.3s ease;
+  border: 6px solid #ffffff; /* borde blanco tal como pides */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  text-align: center; /* requerido */
 }
 
-/* Hover de las cajas destacadas */
-.caja-destacada:hover {
-    background-color: #2D3748;
-    font-style: italic;
-    border-radius: 10px; /* opcional para un toque visual */
+/* Título (parte superior azul) */
+.caja-destacada h3 {
+  margin: 0;
+  padding: 18px 12px;
+  background-color: #3B82F6; /* azul brillante */
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-weight: 700;
 }
+
+/* Texto (parte inferior oscuro) */
+.caja-destacada p {
+  margin: 0;
+  padding: 18px 14px;
+  background-color: #2D3748; /* gris oscuro */
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 1.4;
+  min-height: 110px; /* asegura altura similar entre tarjetas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Responsive: ajuste en pantallas pequeñas ===== */
+@media (max-width: 900px) {
+  .seccion-datos {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .seccion-destacados {
+    grid-template-columns: 1fr;
+    grid-gap: 12px;
+  }
+
+  .seccion-banner {
+    background-attachment: scroll; /* mejor rendimiento en móvil */
+  }
+
+  h2 { text-align: center; }
+}
+
+/* Pequeño ajuste visual para pantallas muy estrechas */
+@media (max-width: 420px) {
+  .caja-destacada h3 { padding: 14px 10px; font-size: 1rem; }
+  .caja-destacada p { padding: 14px 10px; min-height: 90px; font-size: 0.95rem; }
+}
+
+/* ===== Ajustes pedidos ===== */
+
+/* Hover en las cajas */
+.caja-destacada:hover {
+  border-color: red; /* borde pasa de blanco a rojo */
+  transition: border-color 0.3s ease;
+}
+
+/* Hover en el título de cada caja */
+.caja-destacada:hover h3 {
+  background-color: #84CC16; /* verde lima */
+  color: #0f1724; /* texto oscuro para buen contraste */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botón centrado */
+.datos-texto a {
+  display: block;
+  margin: 0 auto; /* lo centra */
+  text-align: center;
+  max-width: fit-content; /* mantiene el ancho del contenido */
+}
+
+/* Efecto hover en el botón */
+.datos-texto a {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  max-width: fit-content;
+  background-color: #84CC16; /* verde lima por defecto */
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.datos-texto a:hover {
+  background: linear-gradient(145deg, #0A4D8C, #1E90FF); /* azul metalizado */
+  color: #f8f8f8;
+  transform: scale(1.05); /* efecto de zoom ligero */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
