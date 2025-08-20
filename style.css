@@ -200,3 +200,21 @@ a {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Contenedor de la imagen con overflow oculto */
+.seccion-datos, .datos-texto {
+  /* Asegura que el contenedor no permita que la imagen se sobresalga */
+  overflow: hidden;
+}
+
+/* Seleccionamos solo la imagen dentro de seccion-datos */
+.seccion-datos img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease; /* transición suave */
+}
+
+/* Al pasar el mouse sobre la imagen */
+.seccion-datos img:hover {
+  transform: scale(1.1); /* zoom del 110% */
+}
+
